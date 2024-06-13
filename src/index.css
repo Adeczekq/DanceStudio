@@ -79,3 +79,8 @@ html::-webkit-scrollbar-thumb {
     transform: translateY(-10px);
   }
 }
+@media (max-width: 1024px) {
+  html {
+    scroll-snap-type: none;
+  }
+}

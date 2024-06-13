@@ -2,7 +2,7 @@ import LogoBg from "./../assets/LogoBg.png";
 
 function About() {
   return (
-    <div className="h-screen flex flex-col gap-24 relative  snap-section p-16 md:p-0 md:h-fit">
+    <div className="h-screen flex flex-col gap-24 relative  snap-section p-16 md:p-0 md:h-fit xl:h-fit">
       <h1 data-aos="fade-up" className=" sacramento-regular text-8xl   ">
         O nas
       </h1>
