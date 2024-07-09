@@ -1,4 +1,4 @@
-import { FaRegCalendarCheck } from "react-icons/fa6";
+import { FaCalendar } from "react-icons/fa";
 
 function PriceCard({ children, price, pirceSecond }) {
   return (
@@ -11,7 +11,7 @@ function PriceCard({ children, price, pirceSecond }) {
       <div className="flex flex-col gap-8 ">
         {children}
         <div className="flex items-center gap-5 text-2xl md:text-lg">
-          <FaRegCalendarCheck className=" text-2xl text-[#C4A484]" />
+          <FaCalendar className=" text-2xl text-[#C4A484]" />
           Zajęcia odbywają sie w każdą środę w godzinach 18-20
         </div>
       </div>
