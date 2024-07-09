@@ -1,4 +1,4 @@
-import { FaRegCalendarCheck } from "react-icons/fa6";
+import { FaRegCalendarCheck } from "react-icons/fa";
 
 function PriceCard({ children, price, pirceSecond }) {
   return (
