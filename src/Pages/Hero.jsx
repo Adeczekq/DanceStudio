@@ -4,11 +4,11 @@ import { faArrowDown } from "@fortawesome/free-solid-svg-icons";
 
 function Hero({ handleClick }) {
   return (
-    <div className="flex flex-col h-screen items-center justify-center bg-primary  snap-section">
+    <div className="snap-section flex h-screen flex-col items-center justify-center  bg-primary">
       <img className="h-3/4" src={Logo} alt="logo" />
       <div className="element " onClick={handleClick}>
         <FontAwesomeIcon
-          className="h-12 cursor-pointer element "
+          className="element animate-bounce: h-12 cursor-pointer"
           icon={faArrowDown}
         />
       </div>

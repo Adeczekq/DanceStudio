@@ -7,6 +7,9 @@ import Pricing from "./Pages/Pricing";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Footer from "./Pages/Footer";
+import Gallery from "./Pages/Gallery";
+import GalleryPage from "./Pages/GalleryPage";
+import { Route, Routes } from "react-router-dom";
 
 function App() {
   useEffect(() => {
@@ -21,18 +24,28 @@ function App() {
     aboutRef.current.scrollIntoView();
   };
   return (
-    <div>
-      <Hero handleClick={handleClick} />
-      <div
-        className="bg-gradient-to-t to-primary from-white p-16 md:p-6"
-        ref={aboutRef}
-      >
-        <About />
-      </div>
-      <Pricing />
-      <Contact />
-      <Footer />
-    </div>
+    <Routes>
+      <Route
+        path="/"
+        element={
+          <div>
+            <Hero handleClick={handleClick} />
+            <div
+              className="bg-gradient-to-t from-white to-primary p-16 md:p-6"
+              ref={aboutRef}
+            >
+              <About />
+            </div>
+            <Pricing />
+            <Gallery />
+
+            <Contact />
+            <Footer />
+          </div>
+        }
+      />
+      <Route path="galeria" element={<GalleryPage />} />
+    </Routes>
   );
 }
 

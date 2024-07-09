@@ -2,23 +2,19 @@ import PriceCard from "../Components/PriceCard";
 import PriceListItem from "../Components/PriceListItem";
 function Pricing() {
   return (
-    <div className="h-screen w-full flex flex-col items-center gap-10 bg-primary p-16 snap-section md:p-4 xl:h-fit ">
-      <h2 data-aos="fade-up" className=" text-8xl sacramento-regular">
+    <div className="snap-section flex h-screen w-full flex-col items-center gap-10 bg-primary p-16 xl:h-fit md:p-4 ">
+      <h2 data-aos="fade-up" className=" sacramento-regular text-8xl">
         Cennik
       </h2>
       <div
         data-aos="fade-up"
-        className="flex gap-20 h-full  items-center xl:flex-col"
+        className="flex h-full items-center  gap-20 xl:flex-col"
       >
-        <PriceCard title="Karnet indywidualny" price="20zł">
-          <PriceListItem title="tekst dadasdsad" />
-          <PriceListItem title="tekst dadasdsad" />
-          <PriceListItem title="tekst dadasdsad" />
-        </PriceCard>
-        <PriceCard title="Karnet Grupowy" price="40zł">
-          <PriceListItem title="tekst dadasdsad" />
-          <PriceListItem title="tekst dadasdsad" />
-          <PriceListItem title="tekst dadasdsad" />
+        <PriceCard price="30zł" pirceSecond="80zł">
+          <PriceListItem title="Wzmocnienie ciała" />
+          <PriceListItem title="Zdolność tworzenia własnych połączeń ruchów" />
+          <PriceListItem title="Zwiększenie poczucia własnej wartości" />
+          <PriceListItem title="Rozwijanie umiejętności interpersonalnych" />
         </PriceCard>
       </div>
     </div>

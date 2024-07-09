@@ -1,11 +1,20 @@
-function PriceCard({ title, children, price }) {
+import { FaRegCalendarCheck } from "react-icons/fa6";
+
+function PriceCard({ children, price, pirceSecond }) {
   return (
-    <div className="bg-white rounded-lg border-2 border-[#C4A484] justify-between p-5 flex flex-col gap-4  w-[500px] h-[500px]  poppins md:w-[350px]">
-      <h2 className="font-medium text-4xl border-b-2 border-[#C4A484] p-4  ">
-        {title}
-      </h2>
-      <div className="flex flex-col gap-8">{children}</div>
-      <span className="text-4xl  ">{price}</span>
+    <div className="poppins  flex h-fit w-[650px] flex-col justify-between gap-4 rounded-lg  border-2 border-[#C4A484] bg-white px-12 py-16 md:w-[350px] md:px-6 md:py-8">
+      <div className="flex flex-col gap-4  border-b-2 border-[#C4A484]  pb-10 text-4xl font-medium md:text-xl ">
+        <h2>Karnet jednorazowy - {price}</h2>
+
+        <h2>Karnet miesięczny - {pirceSecond}</h2>
+      </div>
+      <div className="flex flex-col gap-8 ">
+        {children}
+        <div className="flex items-center gap-5 text-2xl md:text-lg">
+          <FaRegCalendarCheck className=" text-2xl text-[#C4A484]" />
+          Zajęcia odbywają sie w każdą środę w godzinach 18-20
+        </div>
+      </div>
     </div>
   );
 }

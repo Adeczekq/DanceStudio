@@ -18,15 +18,18 @@ export default {
       sm: { max: "639px" },
       // => @media (max-width: 639px) { ... }
     },
-    colors: {
-      primary: "#F8F3F0",
-      white: "#FFFFFF",
-      redcard: "#F66565",
-      bluecard: "#37796D",
-      redBorder: "#D03939",
-      darkgreen: "#193137",
+
+    extend: {
+      colors: {
+        primary: "#F8F3F0",
+        white: "#FFFFFF",
+        redcard: "#F66565",
+        bluecard: "#37796D",
+        redBorder: "#D03939",
+        darkgreen: "#193137",
+        black: "#000000",
+      },
     },
-    extend: {},
   },
   plugins: [],
 };
