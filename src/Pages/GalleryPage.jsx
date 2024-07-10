@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { photos, videos } from "./media";
 import { FaArrowLeft, FaArrowRight, FaPlay } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 
 function GalleryPage() {
   const [selectedMedia, setSelectedMedia] = useState(null);
@@ -45,8 +46,8 @@ function GalleryPage() {
         <FaArrowLeft className="fixed left-8 top-9 text-2xl sm:left-1" />
       </Link>
 
-      <div className="gallery-container p-4">
-        <div className="media-grid grid grid-cols-[repeat(auto-fill,minmax(250px,1fr))] gap-4">
+      <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 3 }}>
+        <Masonry gutter="5px">
           {photos.map((photo) => (
             <img
               className="cursor-pointer"
@@ -60,7 +61,7 @@ function GalleryPage() {
             <div
               key={video.src}
               onClick={() => openModal(video)}
-              className="relative cursor-pointer"
+              className="relative flex cursor-pointer items-center justify-center"
             >
               <video className="h-full w-full" poster={video.poster}>
                 <source src={video.src} type="video/mp4" />
@@ -70,49 +71,49 @@ function GalleryPage() {
               </div>
             </div>
           ))}
-        </div>
+        </Masonry>
+      </ResponsiveMasonry>
 
-        {selectedMedia && (
-          <div className="fixed left-0 top-0 z-10 flex h-full w-full items-center justify-center bg-black">
-            <div
-              className="absolute inset-0"
-              onClick={closeModal} // Zamknij modal po kliknięciu tła
-            />
+      {selectedMedia && (
+        <div className="fixed left-0 top-0 z-10 flex h-full w-full items-center justify-center bg-black">
+          <div
+            className="absolute inset-0"
+            onClick={closeModal} // Zamknij modal po kliknięciu tła
+          />
 
-            <FaArrowLeft
-              className="absolute left-4 cursor-pointer text-4xl text-white"
-              onClick={prevMedia} // Przejdź do poprzedniego elementu
-            />
-            <FaArrowRight
-              className="absolute right-4 cursor-pointer text-4xl text-white"
-              onClick={nextMedia} // Przejdź do następnego elementu
-            />
+          <FaArrowLeft
+            className="absolute left-4 cursor-pointer text-4xl text-white"
+            onClick={prevMedia} // Przejdź do poprzedniego elementu
+          />
+          <FaArrowRight
+            className="absolute right-4 cursor-pointer text-4xl text-white"
+            onClick={nextMedia} // Przejdź do następnego elementu
+          />
 
-            <span
-              className="close-button absolute right-4 top-4 cursor-pointer text-3xl text-white"
-              onClick={closeModal}
+          <span
+            className="close-button absolute right-4 top-4 cursor-pointer text-3xl text-white"
+            onClick={closeModal}
+          >
+            ×
+          </span>
+          {selectedMedia.type === "video" ? (
+            <video
+              key={selectedMedia.src}
+              controls
+              autoPlay
+              className="max-h-full max-w-full"
             >
-              ×
-            </span>
-            {selectedMedia.type === "video" ? (
-              <video
-                key={selectedMedia.src}
-                controls
-                autoPlay
-                className="max-h-full max-w-full"
-              >
-                <source src={selectedMedia.src} type="video/mp4" />
-              </video>
-            ) : (
-              <img
-                src={selectedMedia.src}
-                alt=""
-                className="max-h-full max-w-full"
-              />
-            )}
-          </div>
-        )}
-      </div>
+              <source src={selectedMedia.src} type="video/mp4" />
+            </video>
+          ) : (
+            <img
+              src={selectedMedia.src}
+              alt=""
+              className="max-h-full max-w-full"
+            />
+          )}
+        </div>
+      )}
     </div>
   );
 }
