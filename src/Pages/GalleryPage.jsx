@@ -53,7 +53,7 @@ function GalleryPage() {
               className="cursor-pointer"
               key={photo.src}
               src={photo.src}
-              alt=""
+              alt="photo"
               onClick={() => openModal(photo)}
             />
           ))}
