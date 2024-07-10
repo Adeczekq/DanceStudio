@@ -62,7 +62,7 @@ function GalleryPage() {
               onClick={() => openModal(video)}
               className="relative cursor-pointer"
             >
-              <video className="h-full w-full">
+              <video className="h-full w-full" poster={video.poster}>
                 <source src={video.src} type="video/mp4" />
               </video>
               <div className="absolute inset-0 flex items-center justify-center">
@@ -100,7 +100,6 @@ function GalleryPage() {
                 controls
                 autoPlay
                 className="max-h-full max-w-full"
-                poster={selectedMedia.poster}
               >
                 <source src={selectedMedia.src} type="video/mp4" />
               </video>
