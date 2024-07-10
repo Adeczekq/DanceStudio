@@ -40,9 +40,9 @@ function GalleryPage() {
   };
 
   return (
-    <div className="px-[100px]">
+    <div className="px-[100px] sm:px-4">
       <Link to="/">
-        <FaArrowLeft className="fixed left-8 top-9 text-2xl" />
+        <FaArrowLeft className="fixed left-8 top-9 text-2xl sm:left-1" />
       </Link>
 
       <div className="gallery-container p-4">
