@@ -12,6 +12,7 @@ function GalleryPage() {
     if (selectedMedia) {
       setCurrentIndex(allMedia.indexOf(selectedMedia));
     }
+    console.log(selectedMedia);
   }, [selectedMedia, allMedia]);
 
   const openModal = (media) => {
@@ -72,7 +73,7 @@ function GalleryPage() {
         </div>
 
         {selectedMedia && (
-          <div className="bg-black fixed left-0 top-0 z-10 flex h-full w-full items-center justify-center">
+          <div className="fixed left-0 top-0 z-10 flex h-full w-full items-center justify-center bg-black">
             <div
               className="absolute inset-0"
               onClick={closeModal} // Zamknij modal po kliknięciu tła
@@ -99,6 +100,7 @@ function GalleryPage() {
                 controls
                 autoPlay
                 className="max-h-full max-w-full"
+                poster={selectedMedia.poster}
               >
                 <source src={selectedMedia.src} type="video/mp4" />
               </video>
