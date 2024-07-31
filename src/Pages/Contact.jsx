@@ -11,7 +11,7 @@ function Contact() {
             <div className="z-10 flex flex-col gap-6  text-white">
               <span className="md:text-xs">tel: 690 097 186</span>
               <span className="md:text-xs">
-                email: Dance.clandestine@gmail.com
+                email: dance.clandestine@gmail.com
               </span>
               <span className="md:text-xs">
                 adres: 39-200 Nagawczyna Nagawczyna 109D
