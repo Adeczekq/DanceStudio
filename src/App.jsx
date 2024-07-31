@@ -10,6 +10,7 @@ import Footer from "./Pages/Footer";
 import Gallery from "./Pages/Gallery";
 import GalleryPage from "./Pages/GalleryPage";
 import { Route, Routes } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 function App() {
   useEffect(() => {
@@ -17,6 +18,11 @@ function App() {
       duration: 1000,
     });
   }, []);
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo({ top: 0 });
+  }, [pathname]);
 
   const aboutRef = useRef(null);
 
