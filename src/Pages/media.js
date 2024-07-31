@@ -58,25 +58,11 @@ export const photos = [
 
 export const videos = [
   {
-    src: "/photos/1.mp4",
-    width: 4,
-    height: 3,
-    type: "video",
-    poster: "/posters/poster11.png",
-  },
-  {
     src: "/photos/2.mp4",
     width: 4,
     height: 3,
     type: "video",
     poster: "/posters/poster12.png",
-  },
-  {
-    src: "/photos/3.mp4 ",
-    width: 4,
-    height: 3,
-    type: "video",
-    poster: "/posters/poster1.png",
   },
   {
     src: "/photos/4.mp4 ",
@@ -140,5 +126,19 @@ export const videos = [
     height: 3,
     type: "video",
     poster: "/posters/poster10.png",
+  },
+  {
+    src: "/photos/3.mp4 ",
+    width: 4,
+    height: 3,
+    type: "video",
+    poster: "/posters/poster1.png",
+  },
+  {
+    src: "/photos/1.mp4",
+    width: 4,
+    height: 3,
+    type: "video",
+    poster: "/posters/poster11.png",
   },
 ];
